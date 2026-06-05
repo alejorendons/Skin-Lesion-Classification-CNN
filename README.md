@@ -63,6 +63,41 @@ el efecto de las estrategias de mitigación del desbalance de clases.
 
 ---
 
+## 🚀 Cómo reproducir
+
+### Requisitos previos
+> Se requiere una cuenta **gratuita** en [kaggle.com](https://kaggle.com).  
+> Obtén tu API key en: **kaggle.com → Settings → API → Create New Token**.  
+> Esto descarga un archivo `kaggle.json` con tu usuario y key.
+
+### Pasos
+
+1. Abre el notebook en **Google Colab**  
+   *(botón "Open in Colab" o File → Open → GitHub)*
+
+2. Activa GPU para entrenar más rápido:  
+   **Entorno de ejecución → Cambiar tipo de entorno → T4 GPU**
+
+3. Ejecuta **Run all** (`Ctrl+F9`)
+
+4. En la **Celda 2** el notebook pedirá tus credenciales de Kaggle:
+   ```
+   ==================================================
+     CREDENCIALES DE KAGGLE
+     Obtén tu API key en: kaggle.com/settings → API
+   ==================================================
+   Ingresa tu usuario de Kaggle: [tu_usuario]
+   Ingresa tu API key de Kaggle: [oculta mientras escribes]
+   ```
+   El dataset (~2.5 GB) se descarga automáticamente.
+
+5. El resto del notebook se ejecuta sin intervención adicional.
+
+> **Nota:** La semilla `SEED=42` está fijada en todos los notebooks.  
+> El split por `lesion_id` es determinista — mismos resultados en cada ejecución.
+
+---
+
 ## 🛠️ Stack tecnológico
 
 - Python 3.12
@@ -70,21 +105,6 @@ el efecto de las estrategias de mitigación del desbalance de clases.
 - scikit-learn
 - pandas + matplotlib + seaborn
 - Google Colab (CPU/GPU)
-
----
-
-## 🚀 Cómo reproducir
-
-1. Abre cualquier notebook en **Google Colab**
-2. Configura tus credenciales de Kaggle en **Secrets**:
-   - `KAGGLE_USERNAME` → tu usuario
-   - `KAGGLE_KEY` → tu API key
-   - *(Si no tienes cuenta de Kaggle, el notebook usa Google Drive automáticamente)*
-3. Activa GPU: `Entorno de ejecución → T4 GPU`
-4. Ejecuta **Run all**
-
-El dataset se descarga automáticamente.  
-Semilla fija `SEED=42` — resultados reproducibles.
 
 ---
 
